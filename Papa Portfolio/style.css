@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #080808;
+    color: #080808;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-color: #080808;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+.logo{
+    width: 15%;
+    height: 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 140px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: pink;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+/* Original styles for the header-text */
+.header-text {
+    margin-top: 10%; /* Adjust the margin to create space between navigation and header text */
+    text-align: center;
+    display: flex; /* Enable flexbox layout */
+    justify-content: space-between; /* Align items to the left and right */
+    align-items: center; /* Vertically center the items */
+}
+
+/* Original styles for the image */
+.header-text img {
+    width: 40%; /* Adjust the width of the image */
+    height: 40%; /* Maintain aspect ratio */
+    max-width: 100%; /* Limit the maximum width of the image */
+    margin-left: 15%; /* Adjust the left margin */
+}
+
+/* Original styles for the heading */
+.header-text h1 {
+    font-size: 48px; /* Adjust the font size of the heading */
+    margin-right: 10px; /* Adjust the right margin */
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+    .header-text {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    /* Adjusted size of the image for smaller screens */
+    .header-text img {
+        width: 80%; /* Adjust the width of the image */
+        height: auto; /* Maintain aspect ratio */
+        margin-left: 0; /* Reset left margin */
+        margin-bottom: 20px; /* Add margin at the bottom for spacing */
+    }
+
+    /* Adjusted font size of the heading for smaller screens */
+    .header-text h1 {
+        font-size: 36px; /* Adjust the font size of the heading */
+        margin-right: 0; /* Reset right margin */
+    }
+}
+
+
+
+
+
+.image-container {
+    margin-bottom: 20px; /* Add margin to separate image from text */
+}
+
+.image-container img {
+    width: 100px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline alignment */
+    margin: 0 auto; /* Center align image */
+}
+
+.header-text h1 span{
+    color: pink;
+}
+
+/* About */
+
+#about {
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 40%;
+    margin-right: 20px;
+    margin-left: 50px; /* Add some left margin to create space */
+    display: flex;
+    justify-content: center;
+}
+
+
+.about-col-1 img {
+    width: 110%;
+    max-width: 110%;
+    max-height: 100%;
+    border-radius: 15px;
+    object-fit: cover; /* Ensures the image covers its container */
+    margin-left: 30px; /* Add some right margin to create space */
+}
+
+.about-col-2 {
+    flex-basis: 50%;
+    padding-right: 20px; /* Add some padding to the right to create space */
+    margin-left: 50px;
+}
+
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px; /* Added margin to separate the title and content */
+}
+
+.tab-titles {
+    display: flex;
+    margin-bottom: 40px; /* Added margin to separate the tabs and content */
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: pink;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.active-link.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: pink;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+
+/*portfolio*/
+
+#portfolio{
+    padding: 50px 0;
+}
+#portfolio .container {
+    padding: 90px 15%; /* Adjust the padding to your preference */
+}
+
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), pink);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a{
+    margin-top: 20px;
+    color: pink;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 2px solid pink;
+    padding: 14px 50px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    transition: backround 0.5s;
+}
+
+.btn:hover{
+    background: pink;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: pink;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: pink;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: pink;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copyright i{
+    color: pink;
+}
+html{
+    scroll-behavior: smooth;
+}
+#portfolio .container h2 {
+    color: pink;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+
+/* Table of Contents */
+#table-of-contents {
+    background-color: #080808;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#table-of-contents .container {
+    padding: 0 10%;
+}
+
+#table-of-contents h2 {
+    color: pink;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-item {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px; /* Adjust the padding */
+    border-radius: 15px; /* Increase the border-radius for rounded corners */
+    margin-bottom: 15px; /* Increase the margin between project items */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: fit-content; /* Adjust the width to fit content */
+    text-align: center; /* Center-align the text */
+}
+
+.project-item:hover {
+    background-color: pink;
+    color: #fff;
+}
+
+

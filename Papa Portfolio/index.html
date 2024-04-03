@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <!-- Adjusted the position of the logo here -->
+                </div>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#table-of-contents">Table Of Contents</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1><span> Princess Sarah Papa</span></h1>
+                <!-- Adjusted the position of the image here -->
+                <img src="pink.jpg" alt="Image Description">
+                <p>UI DESIGNER</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+    <div id="about">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="about me.jpg" class="Mwa">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hi I'm Princess Sarah Papa, 19, From Baco, And I am student at Mindoro State University taking
+                    Bachelor Science in Information Technology.
+                </p>
+    
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI Designer</span><br>_________</li>
+                       <li><span>UX Designer</span><br>_________</li>
+                        <li><span>Web Development</span><br>____________</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2016-2020</span><br> Baco National Highschool</li>
+                        <li><span>2020-2022</span><br>Baco National HIghschool (Senior) </li>
+                        <li><span>2022-Present</span><br>Mindoro State University</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="table-of-contents">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="project-box">
+                <a href="#project1" class="project-item">Project 1</a>
+                <a href="#project2" class="project-item">Project 2</a>
+                <a href="#project3" class="project-item">Project 3</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="portfolio">
+        <div class="container" id="project1">
+            <h2>Project 1</h2>
+            <div class="work">
+                <img src="project 3.png">
+                <div class="layer">
+                    <h3>MINSU CLINIC MANAGEMENT SYSTEM</h3>
+                    <p>This project show what we are doing on our last sem on first year college, we develop a system for students
+                        that are need medical attention or consultation even they are at home so that they can easily know what 
+                        medicine are need to be taken.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="project2">
+            <h2>Project 2</h2>
+            <div class="work">
+                <img src="project 1.png">
+                <div class="layer">
+                    <h3>SKINFIX REGISTRATION FORM SYSTEM</h3>
+                    <p>This project show an registration to my newly done project about a system for like makeup store something likethat
+                        i am not sure of what i am gonna do on that projects but i can say that it is about selling and promoting
+                        makeup to empower every people that have insecurities with their looks.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="project3">
+            <h2>Project 3</h2>
+            <div class="work">
+                <img src="project 2.png">
+                <div class="layer">
+                    <h3> EDUCATIONAL SYSTEM</h3>
+                    <p>This project are not done yet but i included it my projects becuase it can help people to know or people that are new to education likes
+                        elementary students that are new to the education, they can learn what are vowels,consonant,odd,even,palindrome and etc.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var projectItems = document.querySelectorAll('x.project-item');
+
+            projectItems.forEach(function (item) {
+                item.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var targetId = item.getAttribute('href');
+                    var targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
